@@ -33,8 +33,14 @@ class PeopleController < ApplicationController
     else
       render :edit
     end
-    
+
   end
+
+  def destroy
+    Person.find(params[:id]).destroy
+    redirect_to people_path
+  end
+
 
   private
   def people_params
